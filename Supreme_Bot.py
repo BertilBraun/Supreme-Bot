@@ -121,6 +121,7 @@ def checkout(driver, name, product):
     time.sleep(config.checkout_delay)
     if products_bought.get(name, 0) < product.amount:
         driver.find_element_by_xpath('//*[@id="pay"]/input').click()
+        driver.maximize_window()
         return True
     else:
         driver.close()
@@ -133,7 +134,9 @@ def order(url, name, product):
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     #options.add_argument('user-data-dir=www.supremenewyork.com')
     options.add_experimental_option("detach", True)
+	
     driver = webdriver.Chrome(options=options)
+    driver.minimize_window()
     
     @timeme
     def Order():

@@ -16,8 +16,9 @@ class Product:
         return self.type + " " + str(self.keywords) + " " + str(self.amount)
 
 products = [
-    Product("jacket", [ "Digital Logo Track", "Another Test", "Digital Logo" ], 3 ),
-    Product("bag", [ "De Martini Messenger" ], 1 ),
+    Product("jacket", [ " " ], 1 ),
+    Product("bag", [ " " ], 1 ),
+    Product("sweatshirt", [ " " ], 1 ),
 ]
 
 keys = {
