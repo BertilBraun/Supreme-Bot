@@ -1,4 +1,5 @@
 @echo off
+rem automatically installes python and the required libraries etc.
 
 python --version 3>NUL
 if errorlevel 0 goto continue
