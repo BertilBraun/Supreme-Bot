@@ -4,7 +4,8 @@ dev = True
 retries = 20
 timeout_at_too_many_requests = 0.5
 normal_timeout = 0.15
-checkout_delay = 3
+#could try to set this to 3 if checkout errors because of too fast checkouts occur
+checkout_delay = 0
 
 class Product:
     def __init__(self, type, keywords, amount):

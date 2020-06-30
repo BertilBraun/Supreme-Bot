@@ -1,6 +1,7 @@
 from joblib import Parallel, delayed
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from datetime import datetime
 import requests
 import config
 import time
@@ -220,6 +221,11 @@ if __name__ == '__main__':
         time.sleep(0.25)
 
     print(products_bought)
+    with open("buys.inf", "a") as f:
+        f.write(str(datetime.now()))
+        f.write(": ")
+        f.write(str(products_bought))
+        f.write("\n")
 
 else:
     order('https://www.supremenewyork.com/shop/jackets/eq90f43yk/gks2fnre5', 'Jacket', config.products[0])
